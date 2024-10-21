@@ -1,0 +1,16 @@
+.terraform
+errored.tfstate
+.terraform.lock.hcl
+.venv
+node_modules
+output/**
+.DS_Store
+
+.nx/
+
+*.pem
+*.crt
+*.key
+
+*.env*
+!.env.template

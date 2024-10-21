@@ -1,0 +1,123 @@
+[
+  {
+    "name": "${name}",
+    "image": "${image}",
+    "cpu": 512,
+    "memory": 1024,
+    "essential": true,
+    "command": [
+      "npm",
+      "run",
+      "start"
+    ],
+    "environment": [
+      {
+          "name": "NEXTAUTH_URL",
+          "value": "https://app.defcon.run"
+      },
+      {
+          "name": "STRAPI_URL",
+          "value": "https://strapi.cms.defcon.run"
+      }, 
+      {
+          "name": "USER_DYNAMODB_REGION",
+          "value": "us-east-1"
+      },
+      {
+          "name": "AUTH_DYNAMODB_REGION",
+          "value": "us-east-1"
+      }
+    ],
+    "secrets": [
+      {
+        "name": "AUTH_SECRET",
+        "valueFrom": "${p_arn}/defcon.run/auth/secret"
+      },
+      {
+        "name": "AUTH_GITHUB_ID",
+        "valueFrom": "${p_arn}/defcon.run/auth/github/id"
+      },
+      {
+        "name": "AUTH_GITHUB_SECRET",
+        "valueFrom": "${p_arn}/defcon.run/auth/github/secret"
+      },
+      {
+        "name": "AUTH_STRAVA_CLIENT_ID",
+        "valueFrom": "${p_arn}/defcon.run/auth/strava/id"
+      },
+      {
+        "name": "AUTH_STRAVA_CLIENT_SECRET",
+        "valueFrom": "${p_arn}/defcon.run/auth/strava/secret"
+      },
+      {
+        "name": "AUTH_DISCORD_CLIENT_ID",
+        "valueFrom": "${p_arn}/defcon.run/auth/discord/id"
+      },
+      {
+        "name": "AUTH_DISCORD_CLIENT_SECRET",
+        "valueFrom": "${p_arn}/defcon.run/auth/discord/secret"
+      },
+      {
+        "name": "AUTH_DYNAMODB_ID",
+        "valueFrom": "${p_arn}/app.defcon.run/rabbit/next-auth/access_key"
+      },
+      {
+        "name": "AUTH_DYNAMODB_SECRET",
+        "valueFrom": "${p_arn}/app.defcon.run/rabbit/next-auth/secret_key"
+      },
+      {
+        "name": "AUTH_SMTP_FROM",
+        "valueFrom": "${p_arn}/defcon.run/auth/smtpfrom"
+      },
+      {
+        "name": "AUTH_SMTP_URL",
+        "valueFrom": "${p_arn}/defcon.run/auth/smtpurl"
+      },
+      {
+        "name": "USER_DYNAMODB_ID",
+        "valueFrom": "${p_arn}/app.defcon.run/rabbit/dynamodb/access_key"
+      },
+      {
+        "name": "USER_DYNAMODB_SECRET",
+        "valueFrom": "${p_arn}/app.defcon.run/rabbit/dynamodb/secret_key"
+      },
+      {
+        "name": "AUTH_ALLOWED_EMAILS",
+        "valueFrom": "${p_arn}/defcon.run/auth/emails_allowed"
+      },
+      {
+        "name": "AUTH_INVITE_CODES",
+        "valueFrom": "${p_arn}/defcon.run/auth/invite_codes"
+      },
+      {
+        "name": "AUTH_STRAPI_TOKEN",
+        "valueFrom": "${p_arn}/defcon.run/auth/strapi_token"
+      }
+    ],
+    "portMappings": [
+      {
+        "containerPort": ${port},
+        "hostPort": ${port}
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-create-group": "true",
+        "awslogs-group": "/ecs/${name}",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "healthCheck": {
+      "command": [
+        "CMD-SHELL",
+        "curl -f http://localhost:${port}/ || exit 1"
+      ],
+      "interval": 30,
+      "timeout": 5,
+      "retries": 3,
+      "startPeriod": 60
+    }
+  }
+]

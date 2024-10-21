@@ -1,0 +1,135 @@
+[
+  {
+    "name": "${name}",
+    "image": "${image}",
+    "cpu": 512,
+    "memory": 1024,
+    "essential": true,
+    "environment": [
+      {
+        "name": "PORT",
+        "value": "${port}"
+      },
+      {
+        "name": "DATABASE_SSL",
+        "value": "true"
+      },
+      {
+        "name": "DATABASE_SSL_REJECT_UNAUTHORIZED",
+        "value": "false"
+      }
+    ],
+    "secrets": [
+      {
+        "name": "NODE_ENV",
+        "valueFrom": "${parameter_arn}/strapi/node_env"
+      },
+      {
+        "name": "JWT_SECRET",
+        "valueFrom": "${parameter_arn}/strapi/secrets/jwt_secret"
+      },
+      {
+        "name": "APP_KEYS",
+        "valueFrom": "${parameter_arn}/strapi/secrets/app_keys"
+      },
+      {
+        "name": "API_TOKEN_SALT",
+        "valueFrom": "${parameter_arn}/strapi/secrets/api_token_salt"
+      },
+      {
+        "name": "ADMIN_JWT_SECRET",
+        "valueFrom": "${parameter_arn}/strapi/secrets/admin_jwt_secret"
+      },
+      {
+        "name": "TRANSFER_TOKEN_SALT",
+        "valueFrom": "${parameter_arn}/strapi/secrets/transfer_token_salt"
+      },
+      {
+        "name": "DATABASE_HOST",
+        "valueFrom": "${parameter_arn}/strapi/db/host"
+      },
+      {
+        "name": "DATABASE_PORT",
+        "valueFrom": "${parameter_arn}/strapi/db/port"
+      },
+      {
+        "name": "DATABASE_CLIENT",
+        "valueFrom": "${parameter_arn}/strapi/db/client"
+      },
+      {
+        "name": "DATABASE_NAME",
+        "valueFrom": "${parameter_arn}/strapi/db/name"
+      },
+      {
+        "name": "DATABASE_USERNAME",
+        "valueFrom": "${parameter_arn}/strapi/db/username"
+      },
+      {
+        "name": "DATABASE_PASSWORD",
+        "valueFrom": "${parameter_arn}/strapi/db/password"
+      },
+      {
+        "name": "AWS_ACCESS_KEY_ID",
+        "valueFrom": "${parameter_arn}/strapi/s3/access_key"
+      },
+      {
+        "name": "AWS_ACCESS_SECRET",
+        "valueFrom": "${parameter_arn}/strapi/s3/secret_key"
+      },
+      {
+        "name": "AWS_CDN_URL",
+        "valueFrom": "${parameter_arn}/strapi/s3/cdnurl"
+      },
+      {
+        "name": "AWS_REGION",
+        "valueFrom": "${parameter_arn}/strapi/s3/region"
+      },
+      {
+        "name": "AWS_BUCKET",
+        "valueFrom": "${parameter_arn}/strapi/s3/bucketname"
+      },
+      {
+        "name": "AWS_SES_KEY",
+        "valueFrom": "${parameter_arn}/strapi/smtp/user"
+      },
+      {
+        "name": "AWS_SES_SECRET",
+        "valueFrom": "${parameter_arn}/strapi/smtp/password"
+      },
+      {
+        "name": "AWS_SES_SERVER",
+        "valueFrom": "${parameter_arn}/strapi/smtp/host"
+      }
+    ],
+    "command": [
+      "npm",
+      "run",
+      "start"
+    ],
+    "portMappings": [
+      {
+        "containerPort": ${port},
+        "hostPort": ${port}
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-create-group": "true",
+        "awslogs-group": "/ecs/${name}",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "healthCheck": {
+      "command": [
+        "CMD-SHELL",
+        "curl -f http://localhost:${port}/ || exit 1"
+      ],
+      "interval": 60,
+      "timeout": 10,
+      "retries": 5,
+      "startPeriod": 120
+    }
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "name": "tf",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tf/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project tf --web",
+  "targets": {
+    "init": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/tf/src/ && terraform init"
+      }
+    },
+    "plan": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/tf/src/ && terraform plan"
+      }
+    },
+    "apply": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/tf/src/ && terraform apply"
+      }
+    },
+    "local-dynamo-up": {
+      "executor": "nx:run-commands",
+      "options": {
+        "env": {
+          "AWS_REGION":"us-east-1",
+          "AWS_ACCESS_KEY_ID":"SAMPLE",
+          "AWS_SECRET_ACCESS_KEY":"SAMPLE",
+          "PAGER":""
+        },
+        "command": "cd apps/tf/src/dynamo-local && docker-compose up -d && ./init-local-db.sh"
+      }
+    },
+    
+    "local-dynamo-down": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/tf/src/dynamo-local && docker-compose down"
+      }
+    },
+    "destroy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/tf/src/ && terraform destroy"
+      }
+    }
+  }
+}

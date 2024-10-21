@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@auth": ["apps/web/user/src/app/auth/auth.ts"],
+      "@components/footer": ["apps/web/user/src/app/components/footer/footer"],
+      "@components/header": ["apps/web/user/src/app/components/header/header"],
+      "@components/providers": ["apps/web/user/src/app/components/providers"],
+      "@defcon.run/strapi": ["apps/cms/src/index.ts"],
+      "@defcon.run/tf": ["apps/tf/src/index.ts"],
+      "@defcon.run/web/db": ["apps/web/db/src/index.ts"],
+      "@defcon.run/web/public/*": ["apps/web/user/public/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

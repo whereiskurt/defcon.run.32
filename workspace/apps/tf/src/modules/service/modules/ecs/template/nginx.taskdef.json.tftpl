@@ -1,0 +1,39 @@
+[
+  {
+    "name": "${name}",
+    "image": "${image}",
+    "cpu": 256,
+    "memory": 512,
+    "essential": true,
+    "command": [
+      "nginx",
+      "-g",
+      "daemon off;"
+    ],
+    "portMappings": [
+      {
+        "containerPort": 443,
+        "hostPort": 443
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-create-group": "true",
+        "awslogs-group": "/ecs/${name}",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "healthCheck": {
+      "command": [
+        "CMD-SHELL",
+        "curl -k -f https://localhost/ || exit 1"
+      ],
+      "interval": 30,
+      "timeout": 5,
+      "retries": 3,
+      "startPeriod": 60
+    }
+  }
+]

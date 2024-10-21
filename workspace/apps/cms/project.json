@@ -1,0 +1,39 @@
+{
+  "name": "cms",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/strapi/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project tf --web",
+  "targets": {
+    "buildlib": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/strapi",
+        "main": "apps/strapi/src/index.ts",
+        "tsConfig": "apps/strapi/tsconfig.lib.json",
+        "assets": ["apps/strapi/*.md"]
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/cms/src/ && npm run develop"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd apps/cms/src/ && npm run build"
+      }
+    },
+    "deploy": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./deploy.strapi.sh"
+      }
+    }
+  }
+}
