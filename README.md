@@ -1,5 +1,5 @@
 # DEFCON.run
-This is the full Infastructure as Code and Front-end code repository for site.
+This is the full Infastructure as Code (terraform) and Front-end (Next.js+React) code repository for defcon.run site for DefCon 32 2024.
 
 ### AWS Architecture
 ![Service Layout - https___defcon run](https://github.com/user-attachments/assets/7af89cf1-e70e-432f-8b2a-058c14670fa6)
