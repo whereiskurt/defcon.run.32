@@ -2,7 +2,8 @@
 This is the full Infastructure as Code (terraform) and Front-end (Next.js+React) code repository for defcon.run site for DefCon 32 2024.
 
 ### AWS Architecture
-![Service Layout - https___defcon run](https://github.com/user-attachments/assets/7af89cf1-e70e-432f-8b2a-058c14670fa6)
+![Service Layout - https___defcon run](https://github.com/user-attachments/assets/08b66792-7e4f-4b9f-8982-c665f2da995e)
+
 
 ### Modern Responsive Design w/ Ligh+Dark+Custom Theming
 We used Next.js, Next-UI and Auth.js (ie. NextAuth.js) for a modern look and feel:
