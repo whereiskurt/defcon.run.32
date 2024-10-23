@@ -6,4 +6,5 @@ This is the full Infastructure as Code and Front-end code repository for site.
 <img width="659" alt="Showing light theme" src="https://github.com/user-attachments/assets/e393336e-4a38-4f63-a2f2-7fcaa0ef6eb0">
 
 ### AWS Architecture
-![Service Layout - https___defcon run](https://github.com/user-attachments/assets/3169fe1a-0ef5-4b04-8820-d120f3bb388f)
+
+![Service Layout - https___defcon run](https://github.com/user-attachments/assets/826c9d78-14a4-478a-86e8-47e8916373cc)
