@@ -2,11 +2,11 @@
 This is the full Infastructure as Code and Front-end code repository for site.
 
 ### AWS Architecture
-![Service Layout - https___defcon run](https://github.com/user-attachments/assets/826c9d78-14a4-478a-86e8-47e8916373cc)
+![Service Layout - https___defcon run](https://github.com/user-attachments/assets/7af89cf1-e70e-432f-8b2a-058c14670fa6)
 
 ### Strapi CMS
 We used a headless Strapi CMS implementation to store static and homesite related data.
-![Service Layout - https___defcon run](https://github.com/user-attachments/assets/7af89cf1-e70e-432f-8b2a-058c14670fa6)
+<img width="1145" alt="Screenshot 2024-10-22 at 20 38 00" src="https://github.com/user-attachments/assets/abf5c2ad-2e33-411d-9fde-463c00e6e3f6">
 
 
 ### Modern Responsive Design w/ Ligh+Dark+Custom Theming
