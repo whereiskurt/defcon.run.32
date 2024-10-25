@@ -14,3 +14,6 @@ output/**
 
 *.env*
 !.env.template
+
+##This configuration won't change remotely, but locally we overwrite.
+workspace/apps/cms/src/config/plugins.ts
