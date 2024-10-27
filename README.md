@@ -19,6 +19,8 @@ I used `Nx` as my build system - it's an awesome way to manage a mono-repo like 
 I also deployed a pre-built Strapi application to our ECS as Docker image. Our `Next.js` application makes calls to Strapi to get the site content like routes and FAQ. Local development was super easy - just running a Strapi image locally and pointing the locally running Next.js to that. I also run a DynamoDB in a Docker image for local dev.
 
 ## AWS Architecture
+The diagram shows two entries into the system - LB or CloudFront. Only requests for `assets.cms.defon.run` (aka S3 bucket) are currently fronted all others goto the load balancer. In the future, all traffic will flow through a CloudFront distribution.
+
 ![Service Layout - https___defcon run - AWS Resources](https://github.com/user-attachments/assets/20b5ba88-f4e4-446e-b165-594bfb5f38a9)
 
 ## Modern Responsive Design w/ Ligh+Dark+Custom Theming
