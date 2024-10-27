@@ -29,3 +29,6 @@ The site looks great on laptops, phones and tablets - it's fully responsive. It 
 ### Strapi CMS
 We used a headless Strapi CMS implementation to store static and homesite related data.
 <img width="1145" alt="Screenshot 2024-10-22 at 20 38 00" src="https://github.com/user-attachments/assets/abf5c2ad-2e33-411d-9fde-463c00e6e3f6">
+
+## Interactive Map
+Using the Leaflet Toolkit I was able to take the GPX files from our past runs and make an interactive map.
