@@ -12,7 +12,7 @@ FOR SURE there are a tonne of wrinkles, unfinished bits, half-baked features, et
 
 ### AWS, Strapi, Nx and Next.js Eco-systems
 
-I used terraform to standup the AWS infrastructure for the site. The only exception is the AWS SES setup which I did manually/clickops. Otherwise, it's a 'tf apply' and 'tf destroy' to bring all the certs, lbs and cluster up/down. Early on I would destroy the infra everyday and bring it back to work on.
+I used terraform to standup the AWS infrastructure for the site. The only exception is the AWS SES setup which I did manually/clickops. Otherwise, it's a `tf apply` and `tf destroy` to bring all the AWS certs, lb  and cluster resources up/down. Early on I would destroy the infra everyday and bring it back to work on.
 
 I used `Nx` as my build system - it's an awesome way to manage a mono-repo like this one.
 
