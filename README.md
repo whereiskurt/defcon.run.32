@@ -4,7 +4,7 @@ Hello World! I present to you: the full Infastructure as Code and Front-end repo
 For last decade defcon.run (aka defcon4x5) has been evolving to the annual premiere hacker community running event. 🤡 It has gone from loose associations to a formalized DefCon event. Along the way many new things have been tried - including this site/app.
 
 # What am I looking at?
-This is a modern full-stack webapp built using `terraform+Nx+Next.js+Next-UI+Auth.js+Strapi`. I have a long history of writing code - and this is kind of an amalgamation of my techniques and approach. It was done adhoc, during my 'spare time' over 4 months between April and August 2024. I started not knowing SO MUCH and learned a tonne along the way.
+This is a modern full-stack webapp built using `Nx + terraform + Next.js + Next-UI + Auth.js + Strapi`. I have a long history of writing code - and this is kind of an amalgamation of my techniques and approach. It was done adhoc, during my 'spare time' over 4 months between April and August 2024. I started not knowing SO MUCH and learned a tonne along the way.
 
 <img width="744" alt="Screenshot 2024-10-27 at 11 35 10" src="https://github.com/user-attachments/assets/771d6194-f27e-4c32-93d9-fc3f09795f7d">
 
