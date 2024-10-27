@@ -6,6 +6,8 @@ For last decade defcon.run (aka defcon4x5) has been evolving to the annual premi
 # What am I looking at?
 This is a modern full-stack webapp built using `terraform+Nx+Next.js+Next-UI+Auth.js+Strapi`. I have a long history of writing code - and this is kind of an amalgamation of my techniques and approach. It was done adhoc, during my 'spare time' over 4 months between April and August 2024. I started not knowing SO MUCH and learned a tonne along the way.
 
+<img width="744" alt="Screenshot 2024-10-27 at 11 35 10" src="https://github.com/user-attachments/assets/771d6194-f27e-4c32-93d9-fc3f09795f7d">
+
 FOR SURE there are a tonne of wrinkles, unfinished bits, half-baked features, etc. etc. Overall I am proud of this work. :-)
 
 ### AWS, Strapi, Nx and Next.js Eco-systems
@@ -32,3 +34,4 @@ We used a headless Strapi CMS implementation to store static and homesite relate
 
 ## Interactive Map
 Using the Leaflet Toolkit I was able to take the GPX files from our past runs and make an interactive map.
+<img width="1399" alt="Screenshot 2024-10-27 at 12 39 59" src="https://github.com/user-attachments/assets/87d41dfc-1024-482c-b4ad-54a15c31ab1b">
