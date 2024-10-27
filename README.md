@@ -12,11 +12,14 @@ I used Nx as my build system - it's an awesome way to manage a mono-repo like th
 
 We deploy a pre-built Strapi application to our ECS as Docker image. Our Next.js application, also a Docker image, makes calls to Strapi to get the site content. Local development is super easy - it's just running a Strapi image locally and pointing the locally running Next.js to that. I also run a DynamoDB in a Docker image for local dev.
 
-### AWS Architecture
+## AWS Architecture
 ![Service Layout - https___defcon run - AWS Resources](https://github.com/user-attachments/assets/20b5ba88-f4e4-446e-b165-594bfb5f38a9)
 
-### Modern Responsive Design w/ Ligh+Dark+Custom Theming
-We used Next.js, Next-UI and Auth.js (ie. NextAuth.js) for a modern look and feel:
+## Modern Responsive Design w/ Ligh+Dark+Custom Theming
+We used Next.js, Next-UI and Auth.js (ie. NextAuth.js) for a modern look and feel. These frameworks made dark/light/custom themeing easy. Using the Next-UI provided all of the major components necessary.
+
+The site looks great on laptops, phones and tablets - it's fully responsive. It also has a lot of hooks for accessible design - aria, etc.
+
 ![defcon run responsive design](https://github.com/user-attachments/assets/8576a751-df48-4e7c-8a63-3c5db915dd2f)
 
 ### Strapi CMS
