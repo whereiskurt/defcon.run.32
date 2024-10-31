@@ -1,5 +1,5 @@
 # DEFCON.run
-Hello World! I present to you: the full Infastructure as Code and Front-end repository for the https://app.defcon.run site for DefCon 32 2024.
+Hello World! I present to you: the complete Infastructure as Code (IaC) and fullstack app repository for the https://app.defcon.run site for DefCon 32 2024.
 
 For last decade defcon.run (aka defcon4x5) has been evolving to the annual premiere hacker community running event. 🤡 It has gone from loose associations to a formalized DefCon event. Along the way many new things have been tried - including this site/app.
 
